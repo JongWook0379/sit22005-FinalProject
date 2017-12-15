@@ -115,9 +115,37 @@ int linkedlist::RemoveFromFront_Integer()
     return temp;
 }
 
+void linkedlist::InsertToBack(int val)
+{
+    if(isEmpty())
+    {
+        InsertToFront(val);
+    }
+    else
+    {
+        Node* last_node = find_prev_node(nullptr);
+        
+        IntegerNode* inode = new IntegerNode(val, nullptr);
+        last_node -> set_next(inode);
+    }
+}
 
-
-
+int linkedlist::RemoveFromFront_Integer()
+{
+    int temp = 0;
+    if(!isEmpty())
+    {
+        Node* cur = pHead;
+        IntegerNode* inode = static_cast<IntegerNode*>(cur);
+        temp = inode -> get_value();
+        
+        pHead = cur -> get_next();
+        
+        delete cur;
+    }
+    return temp;
+    
+}
 
 
 
