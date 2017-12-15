@@ -149,7 +149,50 @@ int linkedlist::RemoveFromFront_Integer()
 
 
 
+int linkedlist::RemoveFromBack_Integer()
+{
+    int temp = 0;
+    if(!isEmpty())
+    {
+        if(pHead -> get_next() == nullptr)
+        {
+            IntegerNode* inode = static_cast<IntegerNode*>(pHead);
+            temp = inode -> get_value();
+        
+            delete inode;
+        
+            pHead = nullptr;
+        }
+        else
+        {
+            Node* last_node = find_prev_node(nullptr);
+            Node* prev_node = find_prev_node(last_node);
+            prev_node -> set_next(nullptr);
+            IntegerNode* inode = static_cast<IntegerNode*>(last_node);
+            temp = inode -> get_value()
+        
+            delete inode;
+        }
+    }
+    return temp;
+}
 
+
+void linkedlist::InsertToFront(char* val)
+{
+    
+}
+
+void linkedlist::InsertToBack(char* val)
+{
+    
+}
+
+char* linkedlist::RemoveFromBack_String()
+{
+    char* temp;
+    return temp;
+}
 
 
 
