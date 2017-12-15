@@ -240,3 +240,35 @@ void linkedlist::print(std::ostream& os)
     os << std::endl;
 }
 
+
+void linkedlist::InsertNextTo(int find_val, int val)
+{
+    
+}
+
+void linkedlist::InsertNextTo(char* find_val, char val)
+{
+    
+}
+
+void linkedlist::RemoveNode(int val)
+{
+    
+}
+
+void linkedlist::RemoveNode(char* int val)
+{
+    
+}
+
+
+Node* linkedlist::find_node(int val)
+{
+    
+}
+
+
+Node* linkedlist::find_node(char* val)
+{
+    
+}
