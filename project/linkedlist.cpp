@@ -195,5 +195,48 @@ char* linkedlist::RemoveFromBack_String()
 }
 
 
+char* linkedlist::RemoveFromBack_String()
+{
+    char* temp;
+    return temp;
+}
 
+bool linkedlist::isEmpty()
+{
+    return pHead == nullptr? true:false;
+}
+
+Node* linkedlist::find_prev_node(Node* next)
+{
+    Node* cur = pHead;
+    if(next == cur)
+    {
+        return nullptr;
+    }
+    
+    while(cur -> get_next() != next && cur != nullptr)
+    {
+        cur = cur -> get_next();
+    }
+    
+    return cur;
+}
+
+void linkedlist::print(std::ostream& os)
+{
+    for(Node* cur = pHead; cur != nullptr; cur = cur -> get_next())
+    {
+        if(cur -> get_node_type() == INT_NODE)
+        {
+            IntegerNode* node = static_cast<IntegerNode*>(cur);
+            os << node->get_value() << " ";
+        }
+        else if(cur -> get_node_type() == STRING_NODE)
+        {
+            StringNode* node = static_cast<StringNode*>(cur);
+            os << node->get_value() << " ";
+        }
+    }
+    os << std::endl;
+}
 
