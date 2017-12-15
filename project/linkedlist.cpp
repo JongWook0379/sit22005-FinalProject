@@ -63,7 +63,7 @@ void StringNode::set_value(char* val)
         delete [] value;
         value = new char[strlen(val)+1];
         strcpy(value, val);
-        value[strlen(val)] = '\0'
+        value[strlen(val)] = '\0';
     }
 }
 
@@ -169,7 +169,7 @@ int linkedlist::RemoveFromBack_Integer()
             Node* prev_node = find_prev_node(last_node);
             prev_node -> set_next(nullptr);
             IntegerNode* inode = static_cast<IntegerNode*>(last_node);
-            temp = inode -> get_value()
+            temp = inode -> get_value();
         
             delete inode;
         }
@@ -256,7 +256,7 @@ void linkedlist::RemoveNode(int val)
     
 }
 
-void linkedlist::RemoveNode(char* int val)
+void linkedlist::RemoveNode(char* val)
 {
     
 }
