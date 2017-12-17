@@ -180,12 +180,27 @@ int linkedlist::RemoveFromBack_Integer()
 
 void linkedlist::InsertToFront(char* val)
 {
-    
+    struct Node *new;
+    new = (struct Node*)malloc(sizeof(struct Node));
+    *new = *newNode;
+
+    new->next = target->next;
+    target->next = new;
+
+    //free(newNode);
+    return new;
 }
 
 void linkedlist::InsertToBack(char* val)
 {
-    
+    struct Node *del;
+    del = target->next;
+    if(del==NULL) {
+        return 0;
+    }
+    target->next = del->next;
+    free(del);
+    return 1;    
 }
 
 char* linkedlist::RemoveFromBack_String()
@@ -243,7 +258,15 @@ void linkedlist::print(std::ostream& os)
 
 void linkedlist::InsertNextTo(int find_val, int val)
 {
-    
+    struct Node *new;
+    new = (struct Node*)malloc(sizeof(struct Node));
+    *new = *newNode;
+
+    new->next = target->next;
+    target->next = new;
+
+    //free(newNode);
+    return new;
 }
 
 void linkedlist::InsertNextTo(char* find_val, char val)
