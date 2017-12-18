@@ -269,7 +269,14 @@ void linkedlist::InsertNextTo(int find_val, int val)
 
 void linkedlist::InsertNextTo(char* find_val, char val)
 {
-    
+    struct Node *new;
+    new = (struct Node*)malloc(sizeof(struct Node));
+    *new = *newNode;
+
+    new->next = target->next;
+    target->next = new;
+
+    return new;    
 }
 
 void linkedlist::RemoveNode(int val)
@@ -285,11 +292,21 @@ void linkedlist::RemoveNode(char* val)
 
 Node* linkedlist::find_node(int val)
 {
-    
+    int i = 0;
+    for (*n = root; *n != NULL && (*n)->v != v; ++i) {
+        *pn = *n;
+        *n = (*n)->next;
+    }
+    return i;   
 }
 
 
 Node* linkedlist::find_node(char* val)
 {
-    
+    int i = 0;
+    for (*n = root; *n != NULL && (*n)->v != v; ++i) {
+        *pn = *n;
+        *n = (*n)->next;
+    }
+    return i;  
 }
