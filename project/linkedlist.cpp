@@ -187,7 +187,6 @@ void linkedlist::InsertToFront(char* val)
     new->next = target->next;
     target->next = new;
 
-    //free(newNode);
     return new;
 }
 
@@ -265,7 +264,6 @@ void linkedlist::InsertNextTo(int find_val, int val)
     new->next = target->next;
     target->next = new;
 
-    //free(newNode);
     return new;
 }
 
