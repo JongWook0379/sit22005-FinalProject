@@ -281,11 +281,38 @@ void linkedlist::InsertNextTo(char* find_val, char val)
 
 void linkedlist::RemoveNode(int val)
 {
-    
+  if(*cur == NULL || del == NULL)
+    return;
+ 
+  if(*cur == del)
+    *head_ref = del->next;
+ 
+  if(del->next != NULL)
+    del->next->prev = del->prev;
+ 
+  if(del->prev != NULL)
+    del->prev->next = del->next;     
+ 
+  free(del);
+  return;
 }
 
 void linkedlist::RemoveNode(char* val)
 {
+  if(*cur == NULL || del == NULL)
+    return;
+ 
+  if(*cur == del)
+    *head_ref = del->next;
+ 
+  if(del->next != NULL)
+    del->next->prev = del->prev;
+ 
+  if(del->prev != NULL)
+    del->prev->next = del->next;     
+ 
+  free(del);
+  return;
     
 }
 
